@@ -28,17 +28,17 @@ services:
     - cart
 
   payment:
-    build: ./payment # it moves to mongodb directory
-    image: joindevops/payment:1.0.0 # docker build -t joindevops/mongodb:1.0.0
+    build: ./payment
+    image: joindevops/payment:1.0.0
     container_name: payment
     environment:
-       CART_HOST: "cart"
-       CART_PORT: "8080"
-       USER_HOST: "user"
-       USER_PORT: "8080"
-       AMQP_HOST: "rabbitmq"
-       AMQP_USER: "roboshop"
-       AMQP_PASS: "roboshop123"
+      CART_HOST: "cart"
+      CART_PORT: "8080"
+      USER_HOST: "user"
+      USER_PORT: "8080"
+      AMQP_HOST: "rabbitmq"
+      AMQP_USER: "roboshop"
+      AMQP_PASS: "roboshop123"
     depends_on:
     - rabbitmq
     - cart
