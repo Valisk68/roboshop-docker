@@ -17,6 +17,12 @@ services:
     container_name: cart
     depends_on:
     - redis
+  shipping:
+    build: ./shipping # it moves to mongodb directory
+    image: joindevops/shipping:1.0.0 # docker build -t joindevops/mongodb:1.0.0
+    container_name: shipping
+    depends_on:
+    - mysql
   frontend:
     build: ./frontend # it moves to mongodb directory
     image: joindevops/frontend:1.0.0 # docker build -t joindevops/mongodb:1.0.0
