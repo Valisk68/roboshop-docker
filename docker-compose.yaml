@@ -25,7 +25,6 @@ services:
     container_name: shipping
     depends_on:
     - mysql
-    - cart
 
   payment:
     build: ./payment
